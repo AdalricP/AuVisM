@@ -6,6 +6,7 @@
 
 ![Screenshot 2024-12-22 at 1 50 00 AM](https://github.com/user-attachments/assets/89d7c4df-66d7-4b2a-8822-68cc95b6bce6)
 
+<img width="1440" height="900" alt="Screenshot 2025-10-18 at 1 43 59 PM" src="https://github.com/user-attachments/assets/53155d7b-9ab1-4288-b9e8-4cd907e3cc65" />
 
 ## Setup
 
@@ -39,19 +40,4 @@ Also - Change your primary device to the device you are using, setting it to Bla
 
 <img width="825" alt="Screenshot 2024-12-22 at 1 30 43 AM" src="https://github.com/user-attachments/assets/dae80a90-378f-4013-bf26-d5fb10dacd89" />
 
-### Setting Up AuVisM
-
-Please check Releases [Releases](https://github.com/Aryan-Pahwani/AuVisM/releases) and download the latest version from there. After installing and running the app, an icon should appear on your menu bar.
-
-<img width="73" alt="Screenshot 2024-12-22 at 1 41 13 AM" src="https://github.com/user-attachments/assets/6c783258-acf6-4b33-be33-d189c7077aad" />
-
-You can click on the icon to open the edit and settings menu.
-
-Open the colour menu through Settings > Appearance > Color
-
-<img width="381" alt="Screenshot 2024-12-22 at 1 43 23 AM" src="https://github.com/user-attachments/assets/17fa2803-2a30-4a73-a172-35440e237372" />
-
-Pick a colour, and your Visualizer should start.
-
-You can play around with the settings and come up with some pretty interesting configurations. Try it! :)
-
+I'd also recommend downloading [MultiSoundChanger by rlxone](https://github.com/rlxone/MultiSoundChanger), which will let you change music volume on Blackhole using your keyboard keys
