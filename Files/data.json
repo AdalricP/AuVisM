@@ -1,1 +1,1 @@
-{"windowBounds":{"x":0,"y":25,"width":73,"height":875},"color":"rgba(164, 5, 10, 0.6)","noiseIntensity":40,"resolution":64}
+{"windowBounds":{"x":0,"y":0,"width":1440,"height":900},"color":"rgba(0, 14, 92, 0.84)","noiseIntensity":60,"resolution":64,"visualMode":"linear","smoothInterpolation":false,"smoothTransitions":false,"minBarHeight":0,"vizPosSizeRot":{"left":958.3764038085938,"top":273.9873962402344,"width":405.24713134765625,"height":223.02520751953125,"rotation":-1}}

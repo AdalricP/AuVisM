@@ -7,29 +7,139 @@
     <style>
       body {
         margin: 0;
-        padding-left: 20px;
-        padding-right: 20px;
-        display: flex;
+        padding: 0;
+        display: block;
         background-color: rgba(0, 0, 0, 0);
         pointer-events: none;
         width: 100vw;
         height: 100vh;
+        overflow: hidden;
       }
-      canvas {
+      
+      #visualizer-container {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 80%;
+        height: 60%;
+        min-width: 400px;
+        min-height: 200px;
+        border: none;
+        border-radius: 8px;
+        pointer-events: none;
+        cursor: default;
+        box-sizing: border-box;
+        background-color: rgba(0, 0, 0, 0);
+        will-change: transform, left, top;
+      }
+      
+      #visualizer-container.edit-mode {
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        pointer-events: auto;
+        cursor: move;
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+      
+      #visualizer-container.edit-mode.resizing {
+        cursor: nw-resize;
+      }
+
+      /* Removed rotator wrapper: rotation applies to container */
+      
+      #resize-handle {
+        position: absolute;
+        bottom: -8px;
+        right: -8px;
+        width: 16px;
+        height: 16px;
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 2px solid rgba(0, 0, 0, 0.3);
+        border-radius: 50%;
+        cursor: nw-resize;
+        pointer-events: auto;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+      }
+      
+      #visualizer-container.edit-mode #resize-handle {
+        opacity: 1;
+      }
+      
+      #center-dot {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 12px;
+        height: 12px;
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 2px solid rgba(0, 0, 0, 0.3);
+        border-radius: 50%;
+        pointer-events: auto;
+        cursor: grab;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+      }
+      
+      #center-dot:hover {
+        background-color: rgba(255, 255, 255, 1);
+        transform: translate(-50%, -50%) scale(1.2);
+      }
+      
+      #visualizer-container.edit-mode #center-dot {
+        opacity: 1;
+      }
+
+      /* Rotation arrow removed; rotation via center dot */
+      
+      #visualizer {
         background-color: rgba(255, 255, 255, 0);
         width: 100%;
         height: 100%;
         pointer-events: none;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        padding: 0;
+        overflow: hidden;
+        position: relative;
+        box-sizing: border-box;
+      }
+      
+      /* WebGL canvas overlays full visualizer area */
+      #gl-canvas {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        display: block;
+      }
+
+      .frequency-bar {
+        background-color: rgba(255, 255, 255, 0.8);
+        min-height: 2px;
+        transition: none;
+        border-radius: 0;
+        flex-shrink: 0;
+        display: block;
+        margin: 0 1px;
       }
 
       .draggable {
         -webkit-app-region: drag;
-        cursor:grab;
-        border: 3px solid red;      }
+        cursor: grab;
+      }
     </style>
   </head>
   <body>
-    <canvas id="visualizer" width="2000px" , height="2000px"></canvas>
+    <div id="visualizer-container">
+      <div id="visualizer">
+        <canvas id="gl-canvas"></canvas>
+      </div>
+      <div id="resize-handle"></div>
+      <div id="center-dot"></div>
+    </div>
     <script src="visualizer.js"></script>
   </body>
 </html>
